@@ -1,0 +1,21 @@
+.grid-action-area{
+    width:150px;
+    
+}
+.grid-action-area li{
+    float:left;
+    margin-right: 5px;
+    list-style: none;
+}
+
+.grid-action-area li a{
+    padding-right:5px;
+    color:#636B6F;
+}
+
+.grid-action-area li a:hover{
+    text-decoration:none;
+}
+.mini-form{
+    width:105px;
+}
