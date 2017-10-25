@@ -37,7 +37,7 @@
                                                             </a>
                                                         </li>
                                                           <li>
-                                                            <a title="Excluir Acesso" class="glyphicon glyphicon-remove-sign" href="javascript:void(0)" onclick="confirmationDialog('400','250','Deseja Excluir o acesso de: {{$item->name}}?','excludeAccess(\'26\')')">
+                                                            <a title="Excluir Acesso" class="glyphicon glyphicon-remove-sign" href="javascript:void(0)" onclick="confirmationDialog('400','250','Deseja Excluir o acesso de: {{$item->name}}?','excludeAccess(\'{{ $item->id }}\')')">
                                                                 <span class="hide-text"></span>
                                                             </a>
                                                         </li>
@@ -65,7 +65,7 @@
     excludeAccess = function( idParam ){
         $.ajax({
                 type: "POST",
-                url: "{{ url('users/edit/delete') }}",
+                url: "{{ url('users/remove') }}",
                 data: {
                        id: idParam,
                        _token: _token
@@ -73,7 +73,8 @@
                 dataType: "json",
                 success: function(response)
                 {
-                    successDialog( 300 , 220 , response.message , '$(".form-datagrid-button").click()' )
+		    redirTo = "{{ url('users') }}";
+                    successDialog( 300 , 220 , response.message , "$(location).attr('href', '"+redirTo+"')" )
                 },
                 error: function(jqXHR, textStatus, errorThrown){
                    returnErr = JSON.parse(jqXHR.responseText)

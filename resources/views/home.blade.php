@@ -16,8 +16,8 @@
 
                    <ul>
                         <li><a href="{{ url('/users') }}">Usuários</a></li>
-                        <li><a href="{{ url('/real-state-office') }}">Imobiliarias</a></li>
-                        <li><a href="{{ url('/immobile') }}">Imóveis</a></li>
+                        <!-- li><a href="{{ url('/real-state-office') }}">Imobiliarias</a></li>
+                        <li><a href="{{ url('/immobile') }}">Imóveis</a></li -->
                     </ul>
 
                 </div>

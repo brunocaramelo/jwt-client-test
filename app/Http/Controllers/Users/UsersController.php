@@ -74,7 +74,7 @@ class UsersController extends Controller
             $edit = $user->exclude( $request->all() );
             if( $edit->status != 200 ) 
                 throw new \Exception( $edit->message );
-            $return['message'] = 'Usuario criado com suceso';
+            $return['message'] = 'Usuario removido com suceso';
             return response()->json( $return );
         }catch( \Exception $error ){
             $return['status'] = 400;

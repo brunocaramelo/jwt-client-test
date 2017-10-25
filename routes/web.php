@@ -26,5 +26,5 @@ Route::group(['prefix' => 'users'], function () {
     Route::post('edit', '\App\Http\Controllers\Users\UsersController@update');
     Route::get('new', '\App\Http\Controllers\Users\UsersController@add');
     Route::post('new', '\App\Http\Controllers\Users\UsersController@insert');
-    Route::post('delete', '\App\Http\Controllers\Users\UsersController@exclude');
+    Route::post('remove', '\App\Http\Controllers\Users\UsersController@exclude');
 });

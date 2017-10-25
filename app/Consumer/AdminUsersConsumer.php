@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminUsersConsumer
 {
-    private $token = null;
     private $baseUrl = null;
 
     public function __construct()
@@ -57,7 +56,7 @@ class AdminUsersConsumer
 
     public function exclude( $params )
     { 
-        $requestApi = new RequestBuilder( $this->baseUrl.'/api/v1/user/admin/exclude' ,
+        $requestApi = new RequestBuilder( $this->baseUrl.'/api/v1/user/admin/remove' ,
             "POST" , 
             [ $params ],
             [ 'Authorization' => 'Bearer '.Auth::user()->token ]  
