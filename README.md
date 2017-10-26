@@ -4,7 +4,9 @@ EXECUTAR DEPOIS DA APLICAÇÃO SERVER
 
 1- Criação e alteração de HOSTS Configurar hosts para server e cliente como o exemplo abaixo
 
-2 - Alterar parametros no .env para HOSTS APP_URL=http://moving-test-client.local APP_API_URL=http://moving-test.local
+2 - Alterar parametros no .env para 
+HOSTS APP_URL=http://jwt-client-test.local 
+APP_API_URL=http://jwt-server-test.local 
 
 3 - Dados de login EMAIL: master.ultra@moving.com.br PASS: secret
 
