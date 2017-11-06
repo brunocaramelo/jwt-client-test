@@ -45,7 +45,7 @@ class UsersController extends Controller
         }
     }
 
-    public function add( Request $request ) 
+    public function add() 
     {   
         return view( 'users.new' );
     }
