@@ -5,25 +5,17 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Editar Acesso</div>
                 <div class="panel-body">
-
-                   <form action="" method="POST" id='form-principal' >
-                        <input type="hidden" class ='form-control' name='id' value="{{$user->id}}" />
-                        {{ csrf_field() }}
-                        <br />
-                        Nome:
-                            <input type="text" class ='form-control' name='name' value="{{$user->name}}" />
-                        <br />
-                        SobreNome:
-                            <input type="text" class ='form-control' name='last_name' value="{{$user->last_name}}" />
-                         
-                        <br />
-                        Email:
-                            <input type="text" class ='form-control' name='email' value="{{$user->email}}" />
-                        <br />
-                    </form>
-                       <button type="submit" class="btn btn-primary" onclick='sendForm()'>Salvar</button>
-                       &nbsp; &nbsp; &nbsp;
-                       <a href='{{ url("users") }}' class="btn btn-primary">Voltar</a>
+                    {!! Form::open([ 'id' => 'form-principal' , 'method' => 'post' ]) !!}
+                        {!! Form::hidden( 'id' , $user->id , [ 'class' => 'form-control' ]) !!}
+                        {{ Form::label('form_name', 'Nome:', ['class' => 'margin-top-10px control-label']) }}
+                        {!! Form::text( 'name' , $user->name , [ 'class' => 'form-control' ,'id' => 'form_name' ]) !!}
+                        {{ Form::label('form_last_name', 'Sobrenome:', ['class' => 'margin-top-10px control-label']) }}
+                        {!! Form::text( 'last_name' , $user->last_name , [ 'class' => 'form-control' ,'id' => 'form_last_name' ]) !!}
+                        {{ Form::label('form_email', 'E-mail:', ['class' => 'margin-top-10px control-label']) }}
+                        {!! Form::text( 'email' , $user->email , [ 'class' => 'margin-bottom-20px form-control' ,'id' => 'form_email' ]) !!}
+                    {!! Form::close() !!}
+                    <button type="submit" class="btn btn-primary margin-right-20px" onclick='sendForm()'>Salvar</button>
+                    <a href='{{ url("users") }}' class="btn btn-primary">Voltar</a>
             </div>
         </div>
     </div>

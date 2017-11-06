@@ -3,26 +3,17 @@
 <div class="col-md-8 col-md-offset-2">
     <div class="row">
             <div class="panel panel-default">
-                <div class="panel-heading">Inseri Acesso</div>
+                <div class="panel-heading">Inserir Acesso</div>
                 <div class="panel-body">
-
-                   <form action="" method="POST" id='form-principal' >
-                        <input type="hidden" class ='form-control' name='id' value="" />
-                        {{ csrf_field() }}
-                        <br />
-                        Nome:
-                            <input type="text" class ='form-control' name='name' value="" />
-                        <br />
-                        SobreNome:
-                            <input type="text" class ='form-control' name='last_name' value="" />
-                         
-                        <br />
-                        Email:
-                            <input type="text" class ='form-control' name='email' value="" />
-                        <br />
-                    </form>
-                       <button type="submit" class="btn btn-primary" onclick='sendForm()'>Salvar</button>
-                       &nbsp; &nbsp; &nbsp;
+                   {!! Form::open([ 'id' => 'form-principal' , 'method' => 'post' ]) !!}
+                        {{ Form::label('form_name', 'Nome:', ['class' => 'margin-top-10px control-label']) }}
+                        {!! Form::text( 'name' , null , [ 'class' => 'form-control' ,'id' => 'form_name' ]) !!}
+                        {{ Form::label('form_last_name', 'Sobrenome:', ['class' => 'margin-top-10px control-label']) }}
+                        {!! Form::text( 'last_name' , null , [ 'class' => 'form-control' ,'id' => 'form_last_name' ]) !!}
+                        {{ Form::label('form_email', 'E-mail:', ['class' => 'margin-top-10px control-label']) }}
+                        {!! Form::text( 'email' , null , [ 'class' => 'margin-bottom-20px form-control' ,'id' => 'form_email' ]) !!}
+                    {!! Form::close() !!}
+                       <button type="submit" class="btn btn-primary margin-right-20px" onclick='sendForm()'>Salvar</button>
                        <a href='{{ url("users") }}' class="btn btn-primary">Voltar</a>
             </div>
         </div>
