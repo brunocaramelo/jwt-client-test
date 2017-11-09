@@ -36,7 +36,6 @@ class UserAuthentication implements Authenticatable
     public function setToken( $token )
     {   
         Session::forget('token_session');
-        
         $this->token = $token;
         Session::put( 'token_session' ,  $token ) ;
     }
