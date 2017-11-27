@@ -3,7 +3,7 @@
 namespace App\Authentication;
 
 use Session;
-use App\Consumer\UserConsumer;
+use App\Users\UserConsumer;
 use Illuminate\Contracts\Auth\Authenticatable as Authenticatable;
 
 class UserAuthentication implements Authenticatable
@@ -74,7 +74,6 @@ class UserAuthentication implements Authenticatable
 
     public function getByEmailAndPassword( $email , $password )
     {
-        
         try{
             $requestUser = new UserConsumer();
             
