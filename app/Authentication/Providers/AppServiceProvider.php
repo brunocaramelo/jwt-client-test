@@ -1,11 +1,9 @@
 <?php
 
-namespace App\Providers;
-
+namespace App\Authentication\Providers;
 use Auth;
-use Illuminate\Support\ServiceProvider;
 use App\Authentication\Providers\UserAuthenticationProvider;
-
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,7 +14,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-	Auth::provider('api-provider', function($app, array $config) {
+        \Illuminate\Support\Facades\Schema::defaultStringLength(191);
+        Auth::provider('api-provider', function($app, array $config) {
             return new UserAuthenticationProvider();
         });
     }
@@ -28,6 +27,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+    
     }
 }
