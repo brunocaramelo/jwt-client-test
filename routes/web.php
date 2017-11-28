@@ -21,10 +21,10 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::group(['prefix' => 'users'], function () {
-    Route::get('/', '\App\Admin\Users\Http\UsersController@index');
-    Route::get('edit/{id}', '\App\Admin\Users\Http\UsersController@edit');
-    Route::post('edit', '\App\Admin\Users\Http\UsersController@update');
-    Route::get('new', '\App\Admin\Users\Http\UsersController@add');
-    Route::post('new', '\App\Admin\Users\Http\UsersController@insert');
-    Route::post('remove', '\App\Admin\Users\Http\UsersController@exclude');
+    Route::get('/', '\Domain\Admin\Users\Http\UsersController@index');
+    Route::get('edit/{id}', '\Domain\Admin\Users\Http\UsersController@edit');
+    Route::post('edit', '\Domain\Admin\Users\Http\UsersController@update');
+    Route::get('new', '\Domain\Admin\Users\Http\UsersController@add');
+    Route::post('new', '\Domain\Admin\Users\Http\UsersController@insert');
+    Route::post('remove', '\Domain\Admin\Users\Http\UsersController@exclude');
 });
